@@ -2,6 +2,6 @@
 #include "GameOfLife.hpp"
 
 int main() {
-    GameOfLife g = GameOfLife(4);
-    g.PlayGame(5);
+    GameOfLife g = GameOfLife(80);
+    g.PlayGame(15);
 }

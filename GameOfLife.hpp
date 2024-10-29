@@ -12,6 +12,7 @@ private:
     void ResetColors();
 public:
     void PlayGame(unsigned short times);
+    void PlayGame();
     GameOfLife(short size);
     ~GameOfLife();
     void DisplayGrid();

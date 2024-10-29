@@ -83,6 +83,27 @@ void GameOfLife::PlayGame(unsigned short times)
     }
 }
 
+void GameOfLife::PlayGame()
+{
+    while (true) {
+
+        DisplayGrid();
+        for (short i = 0; i < size; i++) {
+            for (short k = 0; k < size; k++) {
+                CheckNeighbors(i, k);
+            }
+        }
+        auto temp = grid;
+        grid = nextGrid;
+        nextGrid = temp;
+
+        unsigned int microsecond = 1000000;
+        usleep(microsecond); // sleeps for 1 second
+        cout << "\033[2J"; // Clear the screen
+        cout << "\033[H";
+    }
+}
+
 GameOfLife::GameOfLife(short newSize)
     : size(newSize)
 {
@@ -98,6 +119,8 @@ GameOfLife::GameOfLife(short newSize)
         }
     }
 }
+
+
 
 GameOfLife::~GameOfLife()
 {
